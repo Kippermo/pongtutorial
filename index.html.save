@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<tilte> Pong Tutorial </title>
+	</head>
+
+	<body>
+		<h1>
+			 Welcome!
+			<p>
+				Today we're going to create our own verision of the classic game Pong using the marvelous world of JavaScript!
+			</p>
+		 </h1>
+
+	<canvas id = "myCanvas" width = "300" height = "150" style = border: 1px solid #d3d3d3;">  
+	</canvas>
+
+	<scr
+	var rect = rect(20, 20, 150, 100);
+	ctx.stroke();
+
+	</script>
+
+	</body>
+</html>
+

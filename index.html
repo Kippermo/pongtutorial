@@ -1,0 +1,128 @@
+\<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<tilte> Pong Tutorial </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>		
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+	</head>
+
+	<body>
+		<h1>
+			 Welcome!
+
+		</h1>
+		<p>
+			Today we're going to create our own verision of the classic game Pong using the marvelous world of JavaScript!
+		</p>
+
+		</br>
+
+		</br>
+
+                <p>
+			Let's get started!                      
+                </p>
+
+
+		</br>
+
+                </br>
+
+                <p>
+                        First things first, we need a place to play. Below is the code that creates and draws a rectangle object.
+                </p>
+
+		<div class = "codediv">
+			<p>
+				1|  var c=document.getElementById("myCanvas");
+        			</br>
+				2|  var ctx=c.getContext("2d");
+        			</br>
+				3|  ctx.rect(20, 20, 300, 200);
+        			</br>
+				4|  ctx.stroke();
+        			</br>
+				5| ctx.fill();
+			</p>
+		</div>
+
+	<canvas id = "myCanvas" width = "600" height = "300" style = border: 1px solid #d3d3d3;"></canvas>
+
+     	<script>
+
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+		ctx.rect(0, 20, 300, 200);
+		ctx.stroke();
+		ctx.fill();
+
+	</script>
+
+
+	<script>
+
+                var c=document.getElementById("myCanvas");
+                var ctx=c.getContext("2d");
+		
+		var paddleHeight = 100;
+		var paddleWidth = 20;
+		var paddleY = ctx.height/2;
+
+		document.addEventListener("keydown", keyDownHandler, false);
+		document.addEventListener("keyup", keyUpHandler, false);
+
+		var rightPressed = false;
+		var leftPressed = false;
+
+                ctx.rect(0, 20, 300, 200);
+                ctx.stroke();
+                ctx.fill();
+
+		function drawPaddle() {
+    			ctx.beginPath();
+    			ctx.rect(20, canvas.height - paddleHeight, paddleWidth, paddleHeight);
+    			ctx.fillStyle = "#0095DD";
+    			ctx.fill();
+ 			ctx.closePath();
+		}
+
+		function keyDownHandler(e) {
+    			if(e.keyCode == 39) {
+        		rightPressed = true;
+    			}
+    			else if(e.keyCode == 37) {
+        			leftPressed = true;
+    			}
+		}
+
+		function keyUpHandler(e) {
+   			if(e.keyCode == 39) {
+        			rightPressed = false;
+    			}
+    			else if(e.keyCode == 37) {
+        			leftPressed = false;
+   			}
+		}
+
+
+
+		function draw(){
+			if(rightPressed) {
+    				paddleX += 7;
+			}
+			else if(leftPressed) {
+    				paddleX -= 7;
+			}
+			drawPaddle();
+		}
+
+		setInterval(draw, 10);
+
+        </script>
+
+
+
+	</body>
+</html>
+
