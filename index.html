@@ -59,15 +59,18 @@
 	
 
 		<div id="SplashScreen">
-		<h1>Game Title</h1>
+		<h1>Pong!</h1>
 		<input id="StartButton" type="button" value="Start"/>
 		</div>
 
-<script>
-    $("#StartButton").click(function () {
-        $("#SplashScreen").hide();
-        $("#myCanvas").show();
-    });
+		<script>
+ 			$("#StartButton").click(function () {
+        		$("#SplashScreen").hide();
+        		$("#myCanvas").show();
+			resetBall();
+			playerOneScore = 0;
+			playerTwoscore = 0;
+    		});
 
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
