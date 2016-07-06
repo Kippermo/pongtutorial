@@ -1,6 +1,38 @@
+body{
+	background-color: darkgray;
+}
+
 .codediv{
 	float: left;
 	background-color:lightgray;
 	color:green;
-	font-size:10px;
+	font-size:15px;
+	padding: 8px;
+}
+
+a:link, a:visited{
+    background-color: #191970;
+    color: white;
+    padding: 10px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+	background-color: #3B3B92;
+	color: white;
+}
+
+a.navbar:link, a.navbar:visited{
+	float: top;
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	height: 15px;
+	width: 250px;
+}
+
+a.navbar:hover{
+
 }

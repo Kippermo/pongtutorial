@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<tilte> Pong Tutorial </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>		
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+	</head>
+
+	<body>
+        	<h1> Step 1: Creating a Canvas </h1>
+		<p>
+                        First things first, we need a place to play! Javascript has a special object called a canvas, which is exactly what it sounds like: a canvas is a rectangular place on which you can draw things on a webpage. 
+                </p>
+
+		<div class = "codediv">
+			<p>
+				var canvas = document.getElementById("myCanvas");
+				</br>
+				var ctx = canvas.getContext("2d");
+				</br>
+                		function draw() {
+				</br>
+                        		ctx.clearRect(0, 0, canvas.width, canvas.height);
+                		</br>
+				}
+				</br>
+                		setInterval(draw, 10);
+			</p>
+		</div>
+
+		</br>
+
+		</br>
+
+		</br>
+
+		</br>
+
+		</br>
+
+		</br>
+
+		<p>
+			<p>The first two lines in this block of code are somewhat confusing, so I'll break it down for you.</p>
+			
+			
+			<p>The first line gets the canvas object (which is created in the html) and sets it equal to a variable called canvas.</p>
+
+
+			<p>The next line takes that canvas's context and puts it into a variable called ctx. This context is the way that we will be able to draw to this canvas.</p> 
+		</p>
+
+		<p>
+			<p>The next portion is very crucial. In line 3, we define a function called draw.
+
+
+			<p>Draw is a special function that is called whenever a javascript file is run.</p>
+
+
+			<p>Outside of the draw function, we set the draw interval to 10, meaning that it will execute whatever is contained in the draw function every ten miliseconds.</p>
+
+
+			<p>As you will soon see, this repeated drawing allows for us to create animation and movement.</p>
+
+
+			<p>So far, the only thing that we are drawing is a clear rectangle. The rectangle starts at the point (0, 0) on the canvas (the upper left-hand corner) and has a width and height equal to that of the canvas. In other words, we are simply drawing a rectangle to cover the entire canvas.</p>
+
+
+			<p>This code should simply create a large, white rectangle on your screen.</p>  
+		</p>
+
+	<canvas id = "myCanvas" width = "600" height = "300" style = border: 1px solid #d3d3d3;"></canvas>
+
+	
+     	<script>
+
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+
+		function draw() {
+    			ctx.clearRect(0, 0, canvas.width, canvas.height);
+		}
+
+		setInterval(draw, 10);
+
+        </script>
+	</br>
+	</br>
+	</br>
+	<a href = "step2.html">Let's add some paddles!</href>
+	</body>
+</html>
+

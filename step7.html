@@ -2,72 +2,35 @@
 
 <html>
 	<head>
+		<tilte> Pong Tutorial </title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>		
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 	</head>
 
 	<body>
-	
-	
-	<a class = "navbar"  href = "step1.html"> Step 1: Adding Paddles </href>
 
-	</a>
+                <p>
+                        This is it! The final step! As some of you may have realized, while the game now keeps score, there's no way to win (or more optimistically, there's no way to lose and we're all winners! :) ) Well, let's add that win condition so that you can best all of your friends on your hommade verision of Pong! 
+                </p>
 
-	</br>
-	
-	<a class = "navbar" href = "step2.html"> Step 2: Moving Paddles </href>
-
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step3.html"> Step 3: Create a Ball  </href>
-
-	</a>
-
-	</br>
-	
-	<a class = "navbar" href = "step4.html"> Step 4: Let the Ball Roll! </href> 
-
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step5.html"> Step 5: Making the Ball Bounce </href>
-
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step6.html"> Step 6: Keeping Score  </href>
-	
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step7.html"> Step 7: Adding a Win Condition </href>
-
-	</a>
-
-	</br>
-
-	</a>
-		
-	<p> Today you are going to create your very own, homemade version of the first video game ever: Pong! Below is the finished product (don't have too much fun on my version, though--build it yourself before playing!) </p>
-	
-	<canvas id = "myCanvas" width = "600" height = "300" style = "display: none;"></canvas>
-	
-
-		<div id="SplashScreen">
-		<h1>Game Title</h1>
-		<input id="StartButton" type="button" value="Start"/>
+		<div class = "codediv">
+			<p>
+				1|  var c=document.getElementById("myCanvas");
+        			</br>
+				2|  var ctx=c.getContext("2d");
+        			</br>
+				3|  ctx.rect(20, 20, 300, 200);
+        			</br>
+				4|  ctx.stroke();
+        			</br>
+				5| ctx.fill();
+			</p>
 		</div>
 
-<script>
-    $("#StartButton").click(function () {
-        $("#SplashScreen").hide();
-        $("#myCanvas").show();
-    });
+	<canvas id = "myCanvas" width = "600" height = "300" style = border: 1px solid #d3d3d3;"></canvas>
+
+	
+     	<script>
 
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
@@ -287,8 +250,7 @@
 	</br>
 	</br>
 	</br>
-		<a id = "link">
-		<a href = "step1.html">Let's get started!</href>
-		</a>
+	<a href = "step2.html">On to the next step!</href>
 	</body>
 </html>
+

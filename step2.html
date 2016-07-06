@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<tilte> Pong Tutorial </title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>		
+		<link rel = "stylesheet" type = "text/css" href = "style.css">
+	</head>
+
+	<body>
+
+		</br>
+
+                </br>
+
+                <p>
+                        Next, lets add some paddles. The code to create two paddles is below.
+                </p>
+
+		<div class = "codediv">
+			<p>
+				1|  var c=document.getElementById("myCanvas");
+        			</br>
+				2|  var ctx=c.getContext("2d");
+        			</br>
+				3|  ctx.rect(20, 20, 300, 200);
+        			</br>
+				4|  ctx.stroke();
+        			</br>
+				5| ctx.fill();
+			</p>
+		</div>
+
+	<canvas id = "myCanvas" width = "600" height = "300" style = border: 1px solid #d3d3d3;"></canvas>
+
+     	<script>
+
+		var canvas = document.getElementById("myCanvas");
+		var ctx = canvas.getContext("2d");
+		var paddleHeight = 80;
+		var paddleWidth = 10;
+		var paddle1Y = (canvas.height-paddleWidth)/2;
+		var paddle2Y = paddle1Y;
+		
+		function drawPaddleOne() {
+    			ctx.beginPath();
+    			ctx.rect(canvas.width*.05, canvas.height-paddle1Y, paddleWidth, paddleHeight);
+    			ctx.fillStyle = "#0095DD";
+    			ctx.fill();
+    			ctx.closePath();
+		}
+		
+		function drawPaddleTwo() {
+                        ctx.beginPath();
+                        ctx.rect(canvas.width*.95, canvas.height-paddle2Y, paddleWidth, paddleHeight);
+                        ctx.fillStyle = "#0095DD";
+                        ctx.fill();
+                        ctx.closePath();
+                }
+
+		function drawBoard() {
+               	        ctx.beginPath();
+               		ctx.rect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = "#000000";
+			ctx.fill();
+			ctx.clearRect(canvas.width/2 - 2, 0, 4, canvas.height);
+                       	ctx.closePath();
+                }
+
+		function draw() {
+				drawBoard();
+    				drawPaddleOne();
+				drawPaddleTwo();
+		}
+
+		setInterval(draw, 10);
+
+        </script>
+	<a href = "step3.html">On to the next step!</href>
+	</body>
+</html>

@@ -2,72 +2,34 @@
 
 <html>
 	<head>
+		<tilte> Pong Tutorial </title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>		
 		<link rel = "stylesheet" type = "text/css" href = "style.css">
 	</head>
 
 	<body>
-	
-	
-	<a class = "navbar"  href = "step1.html"> Step 1: Adding Paddles </href>
+                <p>
+                	They say its all about the fun, but we both know it isn't a real game if we aren\t keeping score. So let's add a score tracker! Below is the code that will track and print the score, and reset the ball when a score is made. 
+                </p>
 
-	</a>
-
-	</br>
-	
-	<a class = "navbar" href = "step2.html"> Step 2: Moving Paddles </href>
-
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step3.html"> Step 3: Create a Ball  </href>
-
-	</a>
-
-	</br>
-	
-	<a class = "navbar" href = "step4.html"> Step 4: Let the Ball Roll! </href> 
-
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step5.html"> Step 5: Making the Ball Bounce </href>
-
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step6.html"> Step 6: Keeping Score  </href>
-	
-	</a>
-
-	</br>
-
-	<a class = "navbar" href = "step7.html"> Step 7: Adding a Win Condition </href>
-
-	</a>
-
-	</br>
-
-	</a>
-		
-	<p> Today you are going to create your very own, homemade version of the first video game ever: Pong! Below is the finished product (don't have too much fun on my version, though--build it yourself before playing!) </p>
-	
-	<canvas id = "myCanvas" width = "600" height = "300" style = "display: none;"></canvas>
-	
-
-		<div id="SplashScreen">
-		<h1>Game Title</h1>
-		<input id="StartButton" type="button" value="Start"/>
+		<div class = "codediv">
+			<p>
+				1|  var c=document.getElementById("myCanvas");
+        			</br>
+				2|  var ctx=c.getContext("2d");
+        			</br>
+				3|  ctx.rect(20, 20, 300, 200);
+        			</br>
+				4|  ctx.stroke();
+        			</br>
+				5| ctx.fill();
+			</p>
 		</div>
 
-<script>
-    $("#StartButton").click(function () {
-        $("#SplashScreen").hide();
-        $("#myCanvas").show();
-    });
+	<canvas id = "myCanvas" width = "600" height = "300" style = border: 1px solid #d3d3d3;"></canvas>
+
+	
+     	<script>
 
 		var canvas = document.getElementById("myCanvas");
 		var ctx = canvas.getContext("2d");
@@ -86,8 +48,6 @@
 		var downTwoPressed = false;
 		var playerOneScore = 0;
 		var playerTwoScore = 0;
-		var p1win = false;
-		var p2win = false;
 		
 		document.addEventListener("keydown", keyDownHandler, false);
 		document.addEventListener("keyup", keyUpHandler, false);
@@ -149,14 +109,6 @@
                         ctx.closePath();
                 }
 
-		function findDistance(point1, point2){
-			
-			var a = point1[0] - point2[0];
-			var b = point1[1] - point2[1];
-
-			return Math.sqrt( a*a + b*b );
-		}
-
 		function drawBoard() {
                	        ctx.beginPath();
                		ctx.rect(0, 0, canvas.width, canvas.height);
@@ -184,21 +136,17 @@
 
 		function draw() {
     			ctx.clearRect(0, 0, canvas.width, canvas.height);
-    			if(!(p1win || p2win)){
-				drawBoard();
-				drawBall();
-				drawPaddleOne();
-				drawPaddleTwo();
-				drawScore();
-			}
+			drawBoard();
+			drawBall();
+			drawPaddleOne();
+			drawPaddleTwo();
+			drawScore();
 			if(x < canvas.width * .05 + 10){
 
                                 if(y < (canvas.height - paddle1Y + paddleHeight)){
                                         if(y > (canvas.height - paddle1Y)){	
 						x += 8;
-						dx += .1;
                                                 dx *= -1;
-                                                dy = (Math.random() * 16) + 1 - 10;
 					}
                                 }
                         }
@@ -211,8 +159,6 @@
                                         if(y > (canvas.height - paddle2Y)){
                                             	x -= 8;
 						dx += .1;
-						dx *= -1;
-                                                dy = (Math.random() * 16) + 1 - 10; 
 					 }
                                 }
                         }
@@ -224,41 +170,15 @@
     			if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         			if(x < canvas.width/2){
 					playerTwoScore += 1;
-					if(playerTwoScore > 2){
-						p2win = true;	
-						resetBall();
-						dx = 0;
-						dy = 0;
-					}
-					else{
-						setTimeout(resetBall(), 10000);
-					}
+					setTimeout(resetBall(), 10000);
 				}
 				else{
 					playerOneScore += 1;
-					if(playerOneScore > 2){
-                                                p1win = true;
-                       				resetBall();
-						dx = 0;
-						dy = 0;
-					}
-					else{
-						setTimeout(resetBall(), 10000);
-					}
-
+					setTimeout(resetBall(), 10000);
 				}
 				
 			}
 
-			if(p1win){
-				ctx.font = "50px Trebuchet MS";
-				ctx.fillText("Player 1 Wins!", canvas.width/2 - 175, 150);
-			}
-			if(p2win){
-				ctx.font = "50px Trebuchet MS";
-				ctx.fillText("Player 2 Wins!", canvas.width/2  - 40, 20);
-			}
-			
     			if(y + dy > canvas.height-ballRadius || y + dy < ballRadius) {
         			dy = -dy;
     			}
@@ -287,8 +207,7 @@
 	</br>
 	</br>
 	</br>
-		<a id = "link">
-		<a href = "step1.html">Let's get started!</href>
-		</a>
+	<a href = "step7.html">On to the next step!</href>
 	</body>
 </html>
+
